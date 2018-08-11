@@ -1,10 +1,10 @@
 # TODO APP 
 
 Todo application is a task management tool that runs in a web browser. You can create, edit, and delete multiple todo lists. 
-Also, it calculates how much you're close to be done with the relevant list. Each todo in lists could be differently colored by its degree of importance. 
+Also, it calculates how much you're close to be done with the relevant list. Each todo inside of the lists could be differently colored by its degree of importance. 
 
-Main feature of this application is practical use of Redux.
-Most calculation of this application is done inside of browser, not in the backend server.
+Main feature of this application is a heavy use of Redux.
+Most calculation of this app is done inside of the browser, not in the backend server.
 Processed data are going to send back to backend, and they are saved in MongoDB database. 
 You can sign into this application by using both Google and Facebook accounts. 
 
