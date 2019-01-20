@@ -1,5 +1,7 @@
 # TODO APP 
 
+![](todo_gif.gif)
+
 Todo application is a task management tool that runs in a web browser. You can create, edit, and delete multiple todo lists. 
 Also, it calculates how much you're close to be done with the relevant list. Each todo inside of the lists could be differently colored by its degree of importance. 
 
@@ -20,7 +22,7 @@ cd client
 npm install  
 cd..
 ```
-Customize your own key.js
+Customize your own key.js in server/config 
 ```
 module.exports = {
     'googleAuth' : {
