@@ -51,7 +51,6 @@ npm run dev
 * [MongoDB](https://www.mongodb.com/) - Used to build database 
 * [mongoose.js](http://mongoosejs.com/) - MongoDB ODM for Node.js
 * [mlab](https://mlab.com/) -  Cloud MongoDB service
-* [Passport.js](http://www.passportjs.org/) - Passport is authentication middleware for Node.js
 
 ## Authors
 
