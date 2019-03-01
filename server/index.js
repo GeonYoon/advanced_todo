@@ -33,7 +33,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/todoRoutes')(app);
 
-const PORT = process.env.PORT || 8080 
-app.listen(PORT, function(){
- console.log("server has started");
-});
+app.listen(5000, err => {
+    console.log('Listening');
+  });
+  
