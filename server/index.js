@@ -28,8 +28,8 @@ app.use(
          keys: [keys.cookieKey]
     })    
 );
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // authRoutes does not return anything. Just need to excute + passing app instance
 // immediately call the function. 

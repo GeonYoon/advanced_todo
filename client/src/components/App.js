@@ -22,7 +22,7 @@ class App extends Component {
         <div className="container">
             <BrowserRouter>
                 <div>
-                    {/* <Header /> */}
+                    <Header />
                     <Route exact path="/" component={Landing} />
                     <Route exact path="/todo" component={Dashboard}/>
                     <Route exact path="/todos/new" component={TodoNew}/>
