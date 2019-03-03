@@ -26,8 +26,7 @@ passport.use(
        
     }, 
     async (accessToken,refreshToken, profile, done) => {
-            // Line below does not return anything 
-            // await/async => The beauty of this approach is that it allows asynchronous code to look more synchronous  
+ 
             const existingUser = await User.findOne({ googleId: profile.id});
     
             if (existingUser) {
@@ -54,39 +53,3 @@ passport.use(new FacebookStrategy({
     cb(null, user);
     }
 ));
-
-// passport.use(
-//     new FacebookStrategy(
-//     {
-//         clientID : keys.facebookAuth.clientID,
-//         clientSecret : keys.facebookAuth.clientSecret,
-//         callbackURL : keys.facebookAuth.callbackURL,
-//         proxy: true,
-//         passReqToCallback: true,
-//     },
-//     (accessToken, refreshToken, profile, done) => {
-//         // Any time we reach out to our database, we are initiating an 
-//         // asynchronous action. we can't use const here. 
-//         // instad we can give a promise 
-//                 console.log(5)
-
-//         User.findOne({ facebookId : profile.id })
-//             .then((existingUser) => {
-//                 if(existingUser) {
-//                     console.log(3)
-//                     // we already have a record with a given profile ID
-//                     done(null, existingUser);
-//                 }
-//                 else {
-//                     console.log(4)
-//                     // we don't have a user record with this ID
-//                      // if we do .save() mongoose will save the User to mongodb database
-//                     new User({ facebookId: profile.id})
-//                         .save()
-//                         .then(user => done(null, user));
-//                 }
-//             });
-        
-       
-//     }
-// ))

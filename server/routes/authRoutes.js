@@ -9,7 +9,7 @@ module.exports = (app) => {
     );
     
     app.get(
-        '/auth/facebook', 
+        '/auth/facebook',
         passport.authenticate('facebook', { 
              scope : ['public_profile','email']
         })
@@ -27,14 +27,13 @@ module.exports = (app) => {
     app.get('/auth/facebook/callback', passport.authenticate('facebook', 
     { successRedirect: '/todo', failureRedirect: '/' }));
     
-    app.get('/api/logout',(req, res) => {
+    app.get('/logout',(req, res) => {
         // delete cookie 
         req.logout();
-        //res.send(req.user);
         res.redirect('/');
     })
     
-    app.get('/api/current_user', (req,res) => {
+    app.get('/current_user', (req,res) => {
         res.send(req.user);    
     });
     

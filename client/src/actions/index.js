@@ -1,5 +1,14 @@
 import axios from 'axios';
-import { FETCH_USER, CHANGE_INPUT, INSERT,TOGGLE,REMOVE, UPDATE_COLOR,SUBMIT_TODO,FETCH_TODOS,DELETE_TODO,RESET_TODO,EDIT_FETCH } from './types';
+import { FETCH_USER, 
+        CHANGE_INPUT, 
+        INSERT,
+        TOGGLE,REMOVE, 
+        UPDATE_COLOR,
+        SUBMIT_TODO,
+        FETCH_TODOS,
+        DELETE_TODO,
+        RESET_TODO,
+        EDIT_FETCH } from './types';
 
 export const fetchUser = () => async dispatch => {
     const res = await axios.get('/api/current_user');

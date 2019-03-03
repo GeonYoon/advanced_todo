@@ -1,14 +1,8 @@
-module.exports = {
-    'googleAuth' : {
-        'clientID' : 'YOUR_GOOGLE_AUTH_ID',
-        'clientSecret' : 'YOUR_CLIENT_SECRET',
-        'callbackURL' : '/auth/google/callback'
-    },
-    'facebookAuth' : {
-        'clientID'      : 'YOUR_CLIENT_ID', 
-        'clientSecret'  : 'YOUR_CLIENT_SECRET', 
-        'callbackURL'   : '/auth/facebook/callback'
-    },
-    mongoURI : 'YOUR_MONGO_URL',
-    cookieKey: 'RANDOMLY_GENEREATED_KEY',
+// keys.js - figure out what set of credentials to return 
+if (process.env.NODE_ENV === 'production') {
+    // we are in production - return the prod set of keys
+    module.exports = require("./prod")
+}else {
+    // we are in development - return the dev keys
+   module.exports = require("./dev")
 }
