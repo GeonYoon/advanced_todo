@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link,withRouter } from 'react-router-dom';
 
 
 class Header extends Component {
@@ -11,17 +11,13 @@ class Header extends Component {
                 return;
             case false:
                  return [
-                    <li key="1"><a href="/auth/google">Login With Google</a></li>,
-                    // // first piece indicate top and bottom margin
-                    // // second piece idicate let and right hand margin
-                    // <li key="3" style={{margin: '0 10px'}}>
-                    //     Credits: {this.props.auth.credits}
-                    // </li>,
-                    <li key="2"><a href="/auth/facebook">Login With Facebook</a></li>
+                    <li key="1"><a href="/api/auth/google">Login With Google</a></li>,
+                    <li key="2"><a href="/api/auth/facebook">Login With Facebook</a></li>
                 ];
             default:
                 return (
                     <li><a href="/api/logout">Logout</a></li>
+
                 );
         }
     }
@@ -45,8 +41,11 @@ class Header extends Component {
     }
 }
 
-function mapStateToProps( { auth } ) {
-    return { auth };
-}
-export default connect(mapStateToProps) (Header);
+const mapStateToProps = ({auth}) => {
+    return {
+      auth : auth
+    }
+  };
+
+export default withRouter(connect(mapStateToProps,null)(Header));
 

@@ -4,6 +4,7 @@ const keys = require('./config/keys')
 const cookieSession= require("cookie-session");
 const bodyParser = require('body-parser');
 const passport = require("passport");
+const cors = require('cors');
 
 // order is important here!!
 require('./models/User');
@@ -15,6 +16,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
 
 const app = express();
+app.use(cors());
+
 app.use(bodyParser.json());
 
 app.use(
