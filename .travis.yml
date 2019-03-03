@@ -20,3 +20,16 @@ after_success:
   - docker push ssy01013/todo-client
   - docker push ssy01013/todo-nginx 
   - docker push ssy01013/todo-server
+
+deploy: 
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: advanced-todo 
+  env: AdvancedTodo-env
+  bucket_name: elasticbeanstalk-us-east-2-651203415073
+  bucket_path: advanced-todo
+  on: 
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: $AWS_SECRET_KEY
