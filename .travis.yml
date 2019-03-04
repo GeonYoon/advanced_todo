@@ -1,0 +1,35 @@
+sudo: required
+services: 
+  - docker
+
+before_install:
+  # Since production version of Docker does not support test(only build essentials for deloyment), we use development version of Docker to test
+  - docker build -t ssy01013/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  # npm test is not automatically terminated. So we add a command -- --coverage to kill  
+  - docker run ssy01013/react-test npm test -- --coverage
+
+after_success:
+  - docker build -t ssy01013/todo-client ./client 
+  - docker build -t ssy01013/todo-nginx ./nginx
+  - docker build -t ssy01013/todo-server ./server
+  # Log into the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub 
+  - docker push ssy01013/todo-client
+  - docker push ssy01013/todo-nginx 
+  - docker push ssy01013/todo-server
+
+deploy: 
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: advanced-todo 
+  env: AdvancedTodo-env
+  bucket_name: elasticbeanstalk-us-east-2-651203415073
+  bucket_path: advanced-todo
+  on: 
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: $AWS_SECRET_KEY
