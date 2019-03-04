@@ -10,9 +10,9 @@ const Color = ({ color, active, onClick}) => {
 
 class Palette extends Component {
     
-    ShouldComponentUpdate(nextProps, nextState) {
-        return this.props.colors !== nextProps.colors;
-    }
+    // ShouldComponentUpdate(nextProps, nextState) {
+    //     return this.props.colors !== nextProps.colors;
+    // }
     
     render(){
         const { colors, selected, onSelect,completeness  } = this.props;

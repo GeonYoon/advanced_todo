@@ -7,9 +7,9 @@ import TodoItem from './TodoItem'
 
 class TodoItemList extends Component {
     
-    ShouldComponentUpdate(nextProps, nextState) {
-        return this.props.todos !== nextProps.todos;
-    }
+    // ShouldComponentUpdate(nextProps, nextState) {
+    //     return this.props.todos !== nextProps.todos;
+    // }
     
     render() {
         const {todos, onToggle, onRemove } = this.props;
