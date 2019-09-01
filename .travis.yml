@@ -29,7 +29,7 @@ deploy:
   bucket_name: elasticbeanstalk-us-east-2-651203415073
   bucket_path: advanced-todo
   on: 
-    branch: test
+    branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: 
     secure: $AWS_SECRET_KEY
