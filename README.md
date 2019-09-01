@@ -4,15 +4,15 @@
 
 Advanced Todo application is a task management tool. You can create, edit, and delete multiple todo lists. Also, it calculates how far away from being done you are. Each todo inside of the lists can be differently colored by its degree of importance.
 
-
-
 ## Notable features
+
 - Build a CI + CD pipeline from scratch with Github, Travis CI, and AWS
 - Automatically deploy the code when it is pushed to Github
 - Utilize the Docker CLI to inspect and debug running containers
 - Have full authentication flow using Google and Facebook Oauth
 
 ## Deloyment process 
+
 1. Push code to github 
 2. Travis automatically pulls repo
 3. Travis builds a test image and test code
@@ -22,9 +22,11 @@ Advanced Todo application is a task management tool. You can create, edit, and d
 7. EB pulls images from Docker Hub and delploy
 
 ## Application Structure
+
 ![](map.jpg)
 
 ## Run in a local enviornment
+
 Create and customize your own key.js in server/config 
 ```
 module.exports = {
