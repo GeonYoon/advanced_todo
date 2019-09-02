@@ -2,7 +2,7 @@ module.exports = {
     'googleAuth' : {
         'clientID' : process.env.GOOGLE_CLIENT_ID,
         'clientSecret' : process.env.GOOGLE_CLIENT_SECRET,
-        'callbackURL' : 'http://todo.geonyoon.com/api/auth/google/callback'
+        'callbackURL' : '/api/auth/google/callback'
     },
     'facebookAuth' : {
         'clientID'      : process.env.FB_CLIENT_ID, 
