@@ -1,5 +1,7 @@
 # TODO APP 
 
+**Live Server:** : [www.todo.geonyoon.com](http://www.todo.geonyoon.com)
+
 ![](todo_gif.gif)
 
 Advanced Todo application is a task management tool. You can create, edit, and delete multiple todo lists. Also, it calculates how far away from being done you are. Each todo inside of the lists can be differently colored by its degree of importance.

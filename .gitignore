@@ -3,3 +3,4 @@
 /server/node_modules
 /.vscode
 dev.js
+.DS_Store
