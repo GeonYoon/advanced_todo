@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link,withRouter } from 'react-router-dom';
 
-
 class Header extends Component {
     
     renderContent() {
@@ -12,13 +11,14 @@ class Header extends Component {
             case false:
                  return [
                     <li key="1"><a href="/api/auth/google">Login With Google</a></li>,
+                    <li key="2"><a href="https://github.com/GeonYoon/advanced_todo">Check Code</a></li>
                     // <li key="2"><a href="/api/auth/facebook">Login With Facebook</a></li>
                 ];
             default:
-                return (
-                    <li><a href="/api/logout">Logout</a></li>
-
-                );
+                return [
+                    <li key="1"><a href="/api/logout">Logout</a></li>,
+                    <li key="2"><a href="https://github.com/GeonYoon/advanced_todo">Check Code</a></li>
+                ];
         }
     }
     
