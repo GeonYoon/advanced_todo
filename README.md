@@ -1,6 +1,6 @@
 # TODO APP 
 
-**Live Server:** : [www.todo.geonyoon.com](http://www.todo.geonyoon.com)
+**Live Server:** : [www.todo.geonyoon.com](http://todo.geonyoon.com)
 
 ![](todo_gif.gif)
 
